@@ -25,6 +25,7 @@ train, test = train_test_split(
     test_size=0.2,
     random_state=28,
     stratify=data["salary"]
+)
 
 # DO NOT MODIFY
 cat_features = [
