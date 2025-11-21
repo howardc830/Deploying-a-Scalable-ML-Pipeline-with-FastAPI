@@ -23,16 +23,22 @@ def test_train_model_returns_random_forest_classifier(sample_data):
        """
     # Test that the model returns a RandomForestClassifier instance
     """
-    train, _ = train_test_split(sample_data, test_size=0.2, random_state=28, stratify=sample_data["salary"])
+  train, _ = train_test_split(sample_data, test_size=0.2, random_state=42,
+                                   stratify=sample_data["salary"])
+
     X_train, y_train, encoder, lb = process_data(
-        train, 
-        categorical_features=["workclass", "education", "marital-status", "occupation", 
-                              "relationship", "race", "sex", "native-country"],
-        label="salary", training=True
+        train,
+        categorical_features=[
+            "workclass", "education", "marital-status", "occupation",
+            "relationship", "race", "sex", "native-country"
+        ],
+        label="salary",
+        training=True
     )
+
     model = train_model(X_train, y_train)
-    assert isinstance(model, RandomForestClassifier), "Trained model is not a RandomForestClassifier"
-    assert hasattr(model, "predict"), "Trained model has no predict method"
+    assert isinstance(model, RandomForestClassifier)
+    assert hasattr(model, "predict")
 
 
 # TODO: implement the second test. Change the function name and input as needed
