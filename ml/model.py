@@ -128,6 +128,10 @@ def performance_on_categorical_slice(
     fbeta : float
 
     """
+    slice_df = data[data[column_name] == slice_value]
+
+    if slice_df.empty:
+        return 0.0, 0.0, 0.0
     # TODO: implement the function
     X_slice, y_slice, _, _ = process_data(
         # your code here
