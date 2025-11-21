@@ -15,6 +15,8 @@ from ml.model import (
 # TODO: load the cencus.csv data
 data = pd.read_csv("data/census.csv")
 
+os.makedirs("model", exist_ok=True)
+
 #os.makedirs("model", exist_ok=True)
 
 # TODO: split the provided data to have a train dataset and a test dataset
@@ -59,9 +61,9 @@ X_test, y_test, _, _ = process_data(
 model = train_model(X_train, y_train) # your code here
 
 # save the model and the encoder
-model_path = os.path.join(project_path, "model", "model.pkl")
+model_path = os.path.join("model", "model.pkl")
 save_model(model, model_path)
-encoder_path = os.path.join(project_path, "model", "encoder.pkl")
+encoder_path = os.path.join("model", "encoder.pkl")
 save_model(encoder, encoder_path)
 
 # load the model
