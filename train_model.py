@@ -54,7 +54,7 @@ X_test, y_test, _, _ = process_data(
     label="salary",
     training=False,
     encoder=encoder,
-    lb=lb,
+    lb=lb
 )
 
 # TODO: use the train_model function to train the model on the training dataset
@@ -92,6 +92,14 @@ for col in cat_features:
             # your code here
             # use test, col and slicevalue as part of the input
             test, col, slicevalue, X_test, y_test, model, lb
+            data=test,
+            column_name=col,
+            slice_value=slicevalue,
+            categorical_features=cat_features,
+            labels="salary",
+            encoder=encoder,
+            lb=lb,
+            model=model
         )
         
         with open("slice_output.txt", "a") as f:
