@@ -20,11 +20,13 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    # TODO: implement the function
     model = RandomForestClassifier(
-        n_estimators=100,
+        n_estimators=200,
         random_state=28,
-        n_jobs=1
+        n_jobs=1,
+        max_depth=15,
+        min_samples_split=5,
+        min_samples_leaf=2
     )
     model.fit(X_train, y_train)
     return model
@@ -67,8 +69,7 @@ def inference(model, X):
         Predictions from the model.
     """
     # TODO: implement the function
-    pred = model.predict(X)
-    return pred
+    return model.predict(X)
 
 def save_model(model, path):
     """ Serializes model to a file.
@@ -82,7 +83,7 @@ def save_model(model, path):
     """
     # TODO: implement the function
     with open(path, "wb") as f:
-        pickle.dump(model, f)
+        pickle.dump(model_obj, f)
 
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
@@ -127,10 +128,6 @@ def performance_on_categorical_slice(
     fbeta : float
 
     """
-    slice_df = data[data[column_name] == slice_value].copy()
-
-    if slice_df.empty:
-        return 0.0, 0.0, 0.0
     # TODO: implement the function
     X_slice, y_slice, _, _ = process_data(
         # your code here
