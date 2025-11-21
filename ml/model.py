@@ -127,12 +127,16 @@ def performance_on_categorical_slice(
     fbeta : float
 
     """
+    slice_df = data[data[column_name] == slice_value].copy()
+
+    if slice_df.empty:
+        return 0.0, 0.0, 0.0
     # TODO: implement the function
     X_slice, y_slice, _, _ = process_data(
         # your code here
         # for input data, use data in column given as "column_name", with the slice_value 
         # use training = False
-        slice_value,
+        X=slice_df,
         categorical_features=categorical_features,
         label=label,
         training=False,
