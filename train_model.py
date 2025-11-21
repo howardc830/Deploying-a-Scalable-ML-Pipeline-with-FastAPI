@@ -91,12 +91,11 @@ for col in cat_features:
         p, r, fb = performance_on_categorical_slice(
             # your code here
             # use test, col and slicevalue as part of the input
-            test, col, slicevalue, X_test, y_test, model, lb
             data=test,
             column_name=col,
             slice_value=slicevalue,
             categorical_features=cat_features,
-            labels="salary",
+            label="salary",
             encoder=encoder,
             lb=lb,
             model=model
