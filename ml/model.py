@@ -132,7 +132,7 @@ def performance_on_categorical_slice(
         # your code here
         # for input data, use data in column given as "column_name", with the slice_value 
         # use training = False
-        slice_data,
+        slice_value,
         categorical_features=categorical_features,
         label=label,
         training=False,
