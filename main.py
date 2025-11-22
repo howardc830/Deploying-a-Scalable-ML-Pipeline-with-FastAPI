@@ -28,11 +28,9 @@ class Data(BaseModel):
 
 path = "model/encoder.pkl" # TODO: enter the path for the saved encoder 
 encoder = load_model(path)
-print("Encoder loaded:", encoder is not None)
 
 path = "model/model.pkl" # TODO: enter the path for the saved model 
 model = load_model(path)
-print("Model loaded:", model is not None)
 
 # TODO: create a RESTful API using FastAPI
 app = FastAPI(
@@ -40,7 +38,6 @@ app = FastAPI(
     description="Predicts if income is > $50k based on census data",
     version="1.0.0"
 )
-print("FastAPI successfully loaded")
 
 # TODO: create a GET on the root giving a welcome message
 @app.get("/")
