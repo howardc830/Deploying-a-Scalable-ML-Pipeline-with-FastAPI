@@ -55,9 +55,9 @@ def test_compute_model_metrics_returns_values_between_0_and_1(sample_data):
             "relationship", "race", "sex", "native-country"],
         label="salary", training=False, encoder=encoder, lb=lb)
 
-model = train_model(X_train, y_train)
-preds = inference(model, X_test)
-precsion, recall, fbeta = compute_model_metrics(y_test, preds)
+    model = train_model(X_train, y_train)
+    preds = inference(model, X_test)
+    precsion, recall, fbeta = compute_model_metrics(y_test, preds)
 
 assert isinstance(precision, float)
 assert isinstance(recall, float)
