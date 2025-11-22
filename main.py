@@ -61,7 +61,7 @@ async def post_inference(data: Data):
     # Here it uses the functionality of FastAPI/Pydantic/etc to deal with this.
     data = {k.replace("_", "-"): [v] for k, v in data_dict.items()}
     data = pd.DataFrame.from_dict(data)
-    print("DataFrame created:\n", data_df)
+    print("DataFrame created:\n", data)
 
     cat_features = [
         "workclass",
