@@ -32,7 +32,7 @@ encoder = load_model(path)
 path = "model/model.pkl" # TODO: enter the path for the saved model 
 model = load_model(path)
 
-path = "lb/lb.pkl"
+path = "model/lb.pkl"
 lb = load_model(path)
 
 # TODO: create a RESTful API using FastAPI
