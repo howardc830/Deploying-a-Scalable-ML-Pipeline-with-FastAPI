@@ -46,7 +46,7 @@ def test_compute_model_metrics_returns_values_between_0_and_1(sample_data):
         categorical_features=[
             "workclass", "education", "marital-status", "occupation",
             "relationship", "race", "sex", "native-country"],
-        label="salary", training=False, encoder=encoder, lb=lb)
+        label="salary", training=True)
 
     X_test, y_test, _, _ = process_data(
         test,
@@ -78,6 +78,8 @@ def test_inference_returns_correct_shape_and_type(sample_data):
         categorical_features=[
             "workclass", "education", "marital-status", "occupation",
             "relationship", "race", "sex", "native-country"],
+        label="salary",
+        training=True
     )
     X_test, y_test, _, _ = process_data(
         test,
