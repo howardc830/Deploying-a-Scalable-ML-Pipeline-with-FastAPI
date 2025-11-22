@@ -40,6 +40,7 @@ app = FastAPI(
     description="Predicts if income is > $50k based on census data",
     version="1.0.0"
 )
+print("FastAPI successfully loaded")
 
 # TODO: create a GET on the root giving a welcome message
 @app.get("/")
