@@ -91,7 +91,7 @@ def test_inference_returns_correct_shape_and_type(sample_data):
     model = train_model(X_train, y_train)
     predictions = inference(model, X_test)
 
-    assert isInstance(predictions, np.ndarray), "Predictions should be a numpy array"
+    assert isinstance(predictions, np.ndarray), "Predictions should be a numpy array"
     assert len(predictions) == len(X_test), "Prediction count doesn't match test set size"
     assert np.issubdtype(predictions.dtype, np.integer), "Predictions should be integer type"
         
