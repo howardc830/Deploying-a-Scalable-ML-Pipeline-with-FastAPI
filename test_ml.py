@@ -59,12 +59,12 @@ def test_compute_model_metrics_returns_values_between_0_and_1(sample_data):
     preds = inference(model, X_test)
     precision, recall, fbeta = compute_model_metrics(y_test, preds)
 
-assert isinstance(precision, float)
-assert isinstance(recall, float)
-assert isinstance(fbeta, float)
-assert 0.0 <= precision <= 1.0
-assert 0.0 <= recall <= 1.0
-assert 0.0 <= fbeta <= 1.0
+    assert isinstance(precision, float)
+    assert isinstance(recall, float)
+    assert isinstance(fbeta, float)
+    assert 0.0 <= precision <= 1.0
+    assert 0.0 <= recall <= 1.0
+    assert 0.0 <= fbeta <= 1.0
 
 
 # TODO: implement the third test. Change the function name and input as needed
@@ -86,10 +86,10 @@ def test_inference_returns_correct_shape_and_type(sample_data):
             "relationship", "race", "sex", "native-country"],
         label="salary", training=False, encoder=encoder, lb=lb)
 
-model = train_model(X_train, y_train)
-predictions = inference(model, X_test)
+    model = train_model(X_train, y_train)
+    predictions = inference(model, X_test)
 
-assert isInstance(predictions, np.ndarray), "Predictions should be a numpy array"
-assert len(predictions) == len(X_test), "Prediction count doesn't match test set size"
-assert np.issubdtype(predictions.dtype, np.integer), "Predictions should be integer type"
+    assert isInstance(predictions, np.ndarray), "Predictions should be a numpy array"
+    assert len(predictions) == len(X_test), "Prediction count doesn't match test set size"
+    assert np.issubdtype(predictions.dtype, np.integer), "Predictions should be integer type"
         
