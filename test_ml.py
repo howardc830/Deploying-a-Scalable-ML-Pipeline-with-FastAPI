@@ -75,11 +75,11 @@ def test_inference_returns_correct_shape_and_type(sample_data):
     train, test = train_test_split(sample_data, test_size=0.2, random_state=28, stratify=sample_data["salary"])
     X_train, y_train, encoder, lb = process_data(
         train,
-        ategorical_features=[
+        categorical_features=[
             "workclass", "education", "marital-status", "occupation",
             "relationship", "race", "sex", "native-country"],
     )
-        X_test, y_test, _, _ = process_data(
+    X_test, y_test, _, _ = process_data(
         test,
         categorical_features=[
             "workclass", "education", "marital-status", "occupation",
