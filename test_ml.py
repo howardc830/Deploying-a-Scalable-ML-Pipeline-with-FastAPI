@@ -39,7 +39,7 @@ def test_compute_model_metrics_returns_values_between_0_and_1(sample_data):
     """
     # Test that precision, recall, and fbeta are floats between 0 and 1
     """
-    train, test = train_test_split(sample_data, test_size=0.2, random_state=28 stratify=sample_data["salary"])
+    train, test = train_test_split(sample_data, test_size=0.2, random_state=28, stratify=sample_data["salary"])
 
     X_train, y_train, encoder, lb = process_data(
          train,
