@@ -76,5 +76,8 @@ async def post_inference(data: Data):
         training=False,
         encoder=encoder
     )
+    print("Processed data shape:", data_processed.shape)
+    
     _inference = inference(model, data_processed) # your code here to predict the result using data_processed
+    print("_inference:", _inference)
     return {"result": apply_label(_inference)[0]}
