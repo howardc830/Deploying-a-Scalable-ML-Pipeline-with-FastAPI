@@ -20,7 +20,7 @@ def sample_data():
 
 # TODO: implement the first test. Change the function name and input as needed
 def test_train_model_returns_random_forest_classifier(sample_data):
-   """Test that train_model returns a RandomForestClassifier instance."""
+   """# Test that train_model returns a RandomForestClassifier instance."""
     train, _ = train_test_split(sample_data, test_size=0.2, random_state=28, stratify=sample_data["salary"])
     X_train, y_train, encoder, lb = process_data(
         train,
