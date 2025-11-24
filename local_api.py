@@ -8,7 +8,7 @@ r = requests.get("http://127.0.0.1:8000/")
 print(f"Status Code: {r.status_code}")
 
 # TODO: print the welcome message
-print(f"result: {r.json()['message']}")
+print(f"Result: {r.json()['message']}")
 print()
 
 data = {
@@ -36,7 +36,7 @@ print(f"Status Code: {r.status_code}")
 
 # Safely print result (in case of error)
 try:
-    print(f"result: {r.json()['result']}")
+    print(f"Result: {r.json()['result']}")
 except:
     print("ERROR: Could not parse JSON. Response was:")
     print(r.text)
